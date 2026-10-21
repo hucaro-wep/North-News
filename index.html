@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090909">
+<title>NORTH NEWS | أخبار المملكة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090909;--panel:#121212;--panel2:#191919;--gold:#d7b66b;--gold2:#f0d99a;--text:#f5f1e8;--muted:#aaa397;--line:#30291b;--red:#b94b4b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#302515 0,transparent 50%),var(--bg);color:var(--text);font-family:Cairo,Arial,sans-serif;min-height:100vh}a{color:inherit;text-decoration:none}.wrap{width:min(1100px,100% - 28px);margin:auto}.top{border-bottom:1px solid var(--line);background:#090909eF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.topin{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}.brand{display:flex;align-items:center;gap:10px}.sigil{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:700 17px Cinzel,serif;box-shadow:inset 0 0 15px #d7b66b15}.brand h1{font:700 19px Cinzel,serif;letter-spacing:1px;margin:0;color:var(--gold2)}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted)}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--gold2);font-size:12px}.hero{padding:35px 0 22px}.eyebrow{color:var(--gold);letter-spacing:2px;font:600 11px Cinzel,serif}.hero h2{font-size:clamp(28px,6vw,48px);line-height:1.3;margin:8px 0;color:#fff}.hero p{color:var(--muted);margin:0;max-width:600px;font-size:14px}.goldline{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px 0 24px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.search{flex:1;min-width:180px;background:var(--panel);border:1px solid var(--line);color:white;padding:12px 14px;border-radius:12px;font:inherit;outline:none}.search:focus{border-color:var(--gold)}.filters{display:flex;gap:7px;overflow:auto;padding:2px 0 12px;scrollbar-width:thin}.filter{white-space:nowrap;border:1px solid var(--line);background:#111;color:var(--muted);padding:8px 13px;border-radius:999px;font:inherit;font-size:12px;cursor:pointer}.filter.active,.filter:hover{color:#111;background:var(--gold);border-color:var(--gold)}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px}.sectionhead h3{margin:0;font-size:17px}.sectionhead span{font-size:11px;color:var(--muted)}.featured{display:none;grid-template-columns:1fr 1fr;background:linear-gradient(135deg,#201a10,#101010);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0 24px;cursor:pointer}.featured.show{display:grid}.featured img{width:100%;height:100%;min-height:220px;max-height:320px;object-fit:cover}.feattext{padding:22px;align-self:center}.tag{display:inline-block;color:var(--gold2);border:1px solid #806a38;border-radius:5px;padding:3px 8px;font-size:11px}.feattext h3{font-size:clamp(20px,3vw,30px);line-height:1.45;margin:12px 0}.feattext p{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);background:linear-gradient(160deg,#171717,#0f0f0f);border-radius:15px;overflow:hidden;min-width:0;cursor:pointer;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#8c733e}.thumb{width:100%;height:175px;object-fit:cover;background:#1a1711;display:block}.cardbody{padding:14px}.meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:10px}.category{color:var(--gold)}.card h3{font-size:16px;line-height:1.5;margin:10px 0}.excerpt{font-size:12px;color:var(--muted);line-height:1.9;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.empty,.notice{padding:24px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted);grid-column:1/-1}.footer{margin-top:50px;border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:11px;text-align:center}.modal{display:none;position:fixed;inset:0;z-index:20;background:#000d;overflow:auto;padding:18px}.modal.open{display:block}.article{max-width:760px;margin:20px auto;background:#101010;border:1px solid var(--line);border-radius:18px;overflow:hidden}.article img{width:100%;max-height:420px;object-fit:cover;display:block}.articleinner{padding:clamp(16px,4vw,32px)}.article h2{font-size:clamp(22px,5vw,36px);line-height:1.5;margin:14px 0}.articlecontent{white-space:pre-wrap;overflow-wrap:anywhere;line-height:2.15;font-size:15px;color:#e2ddd2}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid var(--line);background:#191919;color:var(--gold2);padding:10px 14px;border-radius:10px;font:inherit;cursor:pointer}.btn.primary{background:var(--gold);color:#100d06;border-color:var(--gold);font-weight:800}.status{color:var(--muted);font-size:12px;padding:10px 0}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.thumb{height:140px}.featured{grid-template-columns:1fr}.featured img{height:190px;min-height:0}.feattext{padding:16px}.hero{padding-top:26px}}@media(max-width:430px){.grid{grid-template-columns:1fr}.thumb{height:195px}.brand h1{font-size:16px}.hero h2{font-size:29px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap topin">
+<a class="brand" href="./"><span class="sigil">N</span><span><h1>NORTH NEWS</h1><small>ROYAL NEWS NETWORK</small></span></a>
+<a class="pill" href="#news">أخبار المملكة</a>
+</div></header>
+<main class="wrap">
+<section class="hero"><div class="eyebrow">NORTH · N.R.H</div><h2>صوت المملكة الرسمي</h2><p>آخر أخبار المملكة والنقابات والقرارات الملكية، في مكان واحد.</p><div class="goldline"></div>
+<div class="toolbar"><input class="search" id="search" placeholder="ابحث عن خبر أو نقابة..." aria-label="البحث في الأخبار"></div>
+<div class="filters" id="filters">
+<button class="filter active" data-cat="الكل">كل الأخبار</button><button class="filter" data-cat="قرارات ملكية">قرارات ملكية</button><button class="filter" data-cat="النقابات">النقابات</button><button class="filter" data-cat="تعيينات">تعيينات</button><button class="filter" data-cat="إعلانات">إعلانات</button><button class="filter" data-cat="أخرى">أخرى</button>
+</div></section>
+<section id="featured" class="featured" aria-label="الخبر الرئيسي"></section>
+<section id="news"><div class="sectionhead"><h3>آخر الأخبار</h3><span id="count">جارٍ تحميل الأخبار...</span></div><div class="grid" id="grid"><div class="notice">جارٍ الاتصال بأرشيف المملكة...</div></div><div class="status" id="status" role="status"></div></section>
+</main>
+<footer class="footer"><div class="wrap">NORTH NEWS · المنصة الإخبارية الرسمية لمملكة NORTH</div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="تفاصيل الخبر"><div class="article" id="article"></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+let db=null, allNews=[], activeCat="الكل";
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const dateFmt=s=>{try{return new Intl.DateTimeFormat("ar-EG",{dateStyle:"medium"}).format(new Date(s))}catch{return ""}};
+const imgFallback="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#17140e"/><text x="50%" y="50%" fill="#d7b66b" font-size="48" text-anchor="middle" dominant-baseline="middle">NORTH NEWS</text></svg>');
+function img(url){return url||imgFallback}
+function excerpt(t,n=150){t=String(t||"").replace(/\s+/g," ").trim();return t.length>n?t.slice(0,n)+"…":t}
+function card(n){return `<article class="card" data-id="${esc(n.id)}" tabindex="0"><img class="thumb" src="${esc(img(n.image_url))}" alt="" onerror="this.src='${imgFallback}'"><div class="cardbody"><div class="meta"><span class="category">${esc(n.category)}</span><span>${dateFmt(n.published_at||n.created_at)}</span></div><h3>${esc(n.title)}</h3><p class="excerpt">${esc(excerpt(n.excerpt||n.content))}</p></div></article>`}
+function render(){
+ const q=$("search").value.trim().toLocaleLowerCase("ar");
+ const list=allNews.filter(n=>(activeCat==="الكل"||n.category===activeCat)&&[n.title,n.excerpt,n.content,n.category].join(" ").toLocaleLowerCase("ar").includes(q));
+ $("count").textContent=`${list.length} خبر`;
+ const feat=$("featured"); const featured=list.find(n=>n.is_featured);
+ if(featured&&!q&&activeCat==="الكل"){feat.classList.add("show");feat.innerHTML=`<img src="${esc(img(featured.image_url))}" alt="" onerror="this.src='${imgFallback}'"><div class="feattext"><span class="tag">الخبر الرئيسي</span><h3>${esc(featured.title)}</h3><p>${esc(excerpt(featured.excerpt||featured.content,190))}</p><div class="meta"><span class="category">${esc(featured.category)}</span><span>${dateFmt(featured.published_at||featured.created_at)}</span></div></div>`;feat.onclick=()=>openArticle(featured)}else{feat.classList.remove("show");feat.innerHTML=""}
+ const rest=list.filter(n=>!(featured&&n.id===featured.id&& !q&&activeCat==="الكل"));
+ $("grid").innerHTML=rest.length?rest.map(card).join(""):'<div class="empty">لا توجد أخبار مطابقة حاليًا.</div>';
+ $("grid").querySelectorAll("[data-id]").forEach(el=>{const go=()=>openArticle(allNews.find(n=>String(n.id)===el.dataset.id));el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter")go()}});
+}
+function openArticle(n){
+ if(!n)return;
+ $("article").innerHTML=`<button class="btn" id="close" style="margin:14px">✕ إغلاق</button><img src="${esc(img(n.image_url))}" alt="" onerror="this.src='${imgFallback}'"><div class="articleinner"><div class="meta"><span class="category">${esc(n.category)}</span><span>${dateFmt(n.published_at||n.created_at)}</span></div><h2>${esc(n.title)}</h2><div class="articlecontent">${esc(n.content)}</div><div class="actions"><button class="btn primary" id="share">مشاركة الخبر</button><button class="btn" id="copy">نسخ نص الخبر</button></div></div>`;
+ $("modal").classList.add("open");document.body.style.overflow="hidden";
+ $("close").onclick=closeArticle;
+ $("share").onclick=()=>{const url=location.href.split("#")[0]+"#news-"+n.id;const text=`${n.title}\n${url}`;if(navigator.share)navigator.share({title:n.title,text,url}).catch(()=>{});else window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")};
+ $("copy").onclick=async()=>{try{await navigator.clipboard.writeText(n.title+"\n\n"+n.content);$("copy").textContent="تم النسخ"}catch{$("copy").textContent="تعذر النسخ"}};
+ history.replaceState(null,"",location.pathname+location.search+"#news-"+n.id);
+}
+function closeArticle(){$("modal").classList.remove("open");document.body.style.overflow="";history.replaceState(null,"",location.pathname+location.search)}
+$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeArticle()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeArticle()});
+$("search").addEventListener("input",render);
+$("filters").querySelectorAll("button").forEach(b=>b.onclick=()=>{activeCat=b.dataset.cat;$("filters").querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b));render()});
+async function start(){
+ if(!window.NORTH_SUPABASE_URL||!window.NORTH_SUPABASE_ANON_KEY||window.NORTH_SUPABASE_URL.includes("YOUR_")){$("grid").innerHTML='<div class="notice">الموقع يحتاج إعداد بيانات Supabase داخل config.js قبل عرض الأخبار.</div>';return}
+ try{db=window.supabase.createClient(window.NORTH_SUPABASE_URL,window.NORTH_SUPABASE_ANON_KEY);
+ const {data,error}=await db.from("north_news_articles").select("id,title,excerpt,content,category,image_url,is_featured,published_at,created_at").eq("status","published").order("is_featured",{ascending:false}).order("published_at",{ascending:false});
+ if(error)throw error;allNews=data||[];render();$("status").textContent=allNews.length?"تم تحميل الأخبار المنشورة.":"لا توجد أخبار منشورة حتى الآن.";
+ }catch(e){$("grid").innerHTML='<div class="notice">تعذر تحميل الأخبار. تأكد من إعداد Supabase والجداول وسياسات الوصول ثم حدّث الصفحة.</div>';console.error(e)}
+}
+start();
+</script>
+</body></html>
