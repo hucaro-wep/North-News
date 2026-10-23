@@ -307,7 +307,10 @@ a{color:inherit;text-decoration:none}
   .hero h2{font-size:29px}
 }
   .breaking-label {
-  background: #c62828;
+.breaking-label {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e53935 0%, #c62828 50%, #8e0000 100%);
   color: #fff;
   text-align: center;
   padding: 10px;
@@ -315,7 +318,76 @@ a{color:inherit;text-decoration:none}
   font-weight: 900;
   font-size: 17px;
   margin-bottom: 12px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.25),
+    0 6px 16px #c6282866,
+    0 0 0 1px #8e0000;
+  animation: breakingPulse 1.2s infinite;
+}
+
+/* نقطة بث مباشر نابضة */
+.breaking-label::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 9px;
+  height: 9px;
+  margin-top: -4.5px;
+  border-radius: 50%;
+  background: #fff;
+  animation: breakingDot 1.2s infinite;
+}
+
+/* لمعة تمر على الزر */
+.breaking-label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  animation: breakingSheen 3s infinite;
+}
+
+@keyframes breakingPulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.25),
+      0 6px 16px #c6282866,
+      0 0 0 1px #8e0000;
   }
+  50% {
+    opacity: 0.88;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.35),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.25),
+      0 8px 26px #ff3333,
+      0 0 0 1px #8e0000;
+  }
+}
+
+@keyframes breakingDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.6); opacity: 0.4; }
+}
+
+@keyframes breakingSheen {
+  0%, 60% { left: -60%; }
+  100% { left: 130%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breaking-label,
+  .breaking-label::before,
+  .breaking-label::after { animation: none; }
+}
 </style>
 </head>
 
