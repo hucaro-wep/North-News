@@ -1,73 +1,663 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090909">
+<meta name="theme-color" content="#07111f">
 <title>NORTH NEWS | أخبار المملكة</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#090909;--panel:#121212;--panel2:#191919;--gold:#d7b66b;--gold2:#f0d99a;--text:#f5f1e8;--muted:#aaa397;--line:#30291b;--red:#b94b4b}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#302515 0,transparent 50%),var(--bg);color:var(--text);font-family:Cairo,Arial,sans-serif;min-height:100vh}a{color:inherit;text-decoration:none}.wrap{width:min(1100px,100% - 28px);margin:auto}.top{border-bottom:1px solid var(--line);background:#090909eF;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}.topin{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 0}.brand{display:flex;align-items:center;gap:10px}.sigil{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font:700 17px Cinzel,serif;box-shadow:inset 0 0 15px #d7b66b15}.brand h1{font:700 19px Cinzel,serif;letter-spacing:1px;margin:0;color:var(--gold2)}.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted)}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--gold2);font-size:12px}.hero{padding:35px 0 22px}.eyebrow{color:var(--gold);letter-spacing:2px;font:600 11px Cinzel,serif}.hero h2{font-size:clamp(28px,6vw,48px);line-height:1.3;margin:8px 0;color:#fff}.hero p{color:var(--muted);margin:0;max-width:600px;font-size:14px}.goldline{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px 0 24px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}.search{flex:1;min-width:180px;background:var(--panel);border:1px solid var(--line);color:white;padding:12px 14px;border-radius:12px;font:inherit;outline:none}.search:focus{border-color:var(--gold)}.filters{display:flex;gap:7px;overflow:auto;padding:2px 0 12px;scrollbar-width:thin}.filter{white-space:nowrap;border:1px solid var(--line);background:#111;color:var(--muted);padding:8px 13px;border-radius:999px;font:inherit;font-size:12px;cursor:pointer}.filter.active,.filter:hover{color:#111;background:var(--gold);border-color:var(--gold)}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px}.sectionhead h3{margin:0;font-size:17px}.sectionhead span{font-size:11px;color:var(--muted)}.featured{display:none;grid-template-columns:1fr 1fr;background:linear-gradient(135deg,#201a10,#101010);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0 24px;cursor:pointer}.featured.show{display:grid}.featured img{width:100%;height:100%;min-height:220px;max-height:320px;object-fit:cover}.feattext{padding:22px;align-self:center}.tag{display:inline-block;color:var(--gold2);border:1px solid #806a38;border-radius:5px;padding:3px 8px;font-size:11px}.feattext h3{font-size:clamp(20px,3vw,30px);line-height:1.45;margin:12px 0}.feattext p{color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);background:linear-gradient(160deg,#171717,#0f0f0f);border-radius:15px;overflow:hidden;min-width:0;cursor:pointer;transition:transform .18s,border-color .18s}.card:hover{transform:translateY(-3px);border-color:#8c733e}.thumb{width:100%;height:175px;object-fit:cover;background:#1a1711;display:block}.cardbody{padding:14px}.meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:10px}.category{color:var(--gold)}.card h3{font-size:16px;line-height:1.5;margin:10px 0}.excerpt{font-size:12px;color:var(--muted);line-height:1.9;margin:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.empty,.notice{padding:24px;border:1px dashed var(--line);border-radius:14px;text-align:center;color:var(--muted);grid-column:1/-1}.footer{margin-top:50px;border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:11px;text-align:center}.modal{display:none;position:fixed;inset:0;z-index:20;background:#000d;overflow:auto;padding:18px}.modal.open{display:block}.article{max-width:760px;margin:20px auto;background:#101010;border:1px solid var(--line);border-radius:18px;overflow:hidden}.article img{width:100%;max-height:420px;object-fit:cover;display:block}.articleinner{padding:clamp(16px,4vw,32px)}.article h2{font-size:clamp(22px,5vw,36px);line-height:1.5;margin:14px 0}.articlecontent{white-space:pre-wrap;overflow-wrap:anywhere;line-height:2.15;font-size:15px;color:#e2ddd2}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}.btn{border:1px solid var(--line);background:#191919;color:var(--gold2);padding:10px 14px;border-radius:10px;font:inherit;cursor:pointer}.btn.primary{background:var(--gold);color:#100d06;border-color:var(--gold);font-weight:800}.status{color:var(--muted);font-size:12px;padding:10px 0}@media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.thumb{height:140px}.featured{grid-template-columns:1fr}.featured img{height:190px;min-height:0}.feattext{padding:16px}.hero{padding-top:26px}}@media(max-width:430px){.grid{grid-template-columns:1fr}.thumb{height:195px}.brand h1{font-size:16px}.hero h2{font-size:29px}}
+:root{
+--bg:#07111f;
+--panel:#0c1c30;
+--panel2:#10243a;
+--blue:#38bdf8;
+--blue2:#bfdbfe;
+--text:#eff7ff;
+--muted:#8fa9c5;
+--line:#1e4566;
+--red:#ff5267;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+background:radial-gradient(ellipse at 50% -15%,#12345a 0,transparent 48%),var(--bg);
+color:var(--text);
+font-family:Cairo,Arial,sans-serif;
+min-height:100vh
+}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{touch-action:manipulation}
+.wrap{width:min(1050px,100% - 28px);margin:auto}
+.top{
+border-bottom:1px solid var(--line);
+background:#07111ff0;
+position:sticky;top:0;z-index:10;
+backdrop-filter:blur(14px)
+}
+.topin{
+display:flex;align-items:center;justify-content:space-between;
+gap:12px;padding:13px 0
+}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.sigil{
+width:43px;height:43px;flex-shrink:0;
+border:1px solid var(--blue);border-radius:13px;
+display:grid;place-items:center;color:var(--blue);
+font:700 19px Cinzel,serif;
+background:#0c1c30;
+box-shadow:inset 0 0 15px #38bdf815
+}
+.brand h1{
+font:700 19px Cinzel,serif;letter-spacing:1px;
+margin:0;color:var(--blue)
+}
+.brand small{
+display:block;font-size:10px;letter-spacing:1.5px;color:var(--muted)
+}
+.pill{
+border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;color:var(--blue2);font-size:12px;
+white-space:nowrap;background:#0c1c30
+}
+.hero{padding:32px 0 15px}
+.eyebrow{
+color:var(--blue);letter-spacing:2px;
+font:600 11px Cinzel,serif
+}
+.hero h2{
+font-size:clamp(28px,6vw,45px);
+line-height:1.4;margin:8px 0;color:var(--blue2)
+}
+.hero p{
+color:var(--muted);margin:0;max-width:650px;font-size:14px;line-height:2
+}
+.blueline{
+height:1px;
+background:linear-gradient(90deg,transparent,var(--blue),transparent);
+margin:18px 0 20px
+}
+/* شريط موجز الأخبار */
+.ticker{
+display:flex;align-items:stretch;gap:0;
+border:1px solid var(--line);border-radius:12px;
+overflow:hidden;background:var(--panel);margin:18px 0 22px;
+min-height:47px
+}
+.ticker-label{
+background:var(--blue);color:#07111f;
+font-weight:800;font-size:12px;
+padding:12px;white-space:nowrap;display:flex;align-items:center
+}
+.ticker-window{
+min-width:0;flex:1;display:flex;align-items:center;
+padding:9px 13px;overflow-x:auto;scrollbar-width:none
+}
+.ticker-window::-webkit-scrollbar{display:none}
+.ticker-items{display:flex;gap:24px;white-space:nowrap}
+.ticker-items a{font-size:12px;color:var(--blue2)}
+.ticker-items a:before{content:"◆";color:var(--blue);font-size:9px;margin-left:8px}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:17px 0 12px}
+.search{
+flex:1;min-width:180px;width:100%;
+background:var(--panel);border:1px solid var(--line);
+color:var(--text);padding:12px 14px;border-radius:11px;
+outline:none;font-size:13px
+}
+.search:focus,.dateinput:focus,.date-select:focus{border-color:var(--blue)}
+.search::placeholder,.dateinput::placeholder{color:#7892ad}
+.archive{
+display:flex;gap:8px;flex-wrap:wrap;
+padding:12px;background:#0a192a;border:1px solid var(--line);
+border-radius:12px;margin:12px 0 16px
+}
+.archive-title{
+width:100%;font-size:12px;color:var(--blue2);
+font-weight:700;margin-bottom:2px
+}
+.dateinput,.date-select{
+min-width:0;flex:1;background:var(--panel);
+color:var(--blue2);border:1px solid var(--line);
+padding:10px;border-radius:9px;font-size:12px;outline:none
+}
+.btn{
+border:1px solid var(--line);background:var(--panel2);
+color:var(--blue2);padding:10px 13px;border-radius:9px;
+cursor:pointer;font-size:12px
+}
+.btn.primary{background:var(--blue);color:#07111f;border-color:var(--blue);font-weight:800}
+.filters{
+display:flex;gap:7px;overflow-x:auto;
+padding:4px 0 12px;scrollbar-width:thin
+}
+.filter{
+white-space:nowrap;flex-shrink:0;
+border:1px solid var(--line);background:var(--panel);
+color:var(--muted);padding:8px 13px;border-radius:9px;
+font-size:12px;cursor:pointer
+}
+.filter.active,.filter:hover{
+color:#07111f;background:var(--blue);border-color:var(--blue)
+}
+.sectionhead{
+display:flex;align-items:center;justify-content:space-between;
+gap:12px;margin:22px 0 13px
+}
+.sectionhead h3{margin:0;font-size:18px;color:var(--blue2)}
+.sectionhead span{font-size:11px;color:var(--muted)}
+.featured{
+display:none;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);
+background:linear-gradient(120deg,#102c48,#0b1929);
+border:1px solid var(--line);border-radius:15px;
+overflow:hidden;margin:15px 0 26px;cursor:pointer
+}
+.featured.show{display:grid}
+.featured img{
+width:100%;height:100%;min-height:210px;max-height:290px;
+object-fit:cover;background:var(--panel)
+}
+.feattext{padding:22px;align-self:center}
+.tag{
+display:inline-block;color:var(--blue);
+border:1px solid #28658b;border-radius:5px;
+padding:3px 9px;font-size:11px
+}
+.feattext h3{font-size:clamp(20px,3vw,28px);line-height:1.6;margin:12px 0}
+.feattext p{color:var(--muted);font-size:13px;line-height:1.9}
+.meta{
+display:flex;justify-content:space-between;align-items:center;
+gap:10px;color:var(--muted);font-size:10px;flex-wrap:wrap
+}
+.category{color:var(--blue)}
+/* قائمة أخبار منظمة */
+.grid{display:flex;flex-direction:column;gap:10px}
+.card{
+display:grid;grid-template-columns:145px minmax(0,1fr);
+border:1px solid var(--line);background:linear-gradient(110deg,#0c1c30,#091624);
+border-radius:12px;overflow:hidden;min-width:0;
+cursor:pointer;transition:border-color .18s,background .18s
+}
+.card:hover{border-color:var(--blue);background:#10243a}
+.thumb{
+width:145px;height:100%;min-height:140px;
+max-height:190px;object-fit:cover;background:var(--panel);
+display:block
+}
+.cardbody{padding:13px 15px;min-width:0;align-self:center}
+.card h3{font-size:16px;line-height:1.7;margin:9px 0;color:var(--blue2)}
+.excerpt{
+font-size:12px;color:var(--muted);line-height:1.9;margin:0;
+display:-webkit-box;-webkit-line-clamp:2;
+-webkit-box-orient:vertical;overflow:hidden
+}
+.readmore{display:inline-block;color:var(--blue);font-size:11px;margin-top:9px}
+.empty,.notice{
+padding:24px;border:1px dashed var(--line);border-radius:12px;
+text-align:center;color:var(--muted);line-height:2
+}
+.status{color:var(--muted);font-size:12px;padding:12px 0}
+.footer{
+margin-top:45px;border-top:1px solid var(--line);
+padding:22px 0;color:var(--muted);font-size:11px;text-align:center;line-height:2
+}
+.modal{
+display:none;position:fixed;inset:0;z-index:30;
+background:#020813eF;overflow:auto;padding:14px
+}
+.modal.open{display:block}
+.article{
+max-width:760px;margin:16px auto;
+background:#0a192a;border:1px solid var(--line);
+border-radius:15px;overflow:hidden
+}
+.article>img{
+width:100%;max-height:400px;object-fit:cover;display:block
+}
+.articleinner{padding:clamp(16px,4vw,30px)}
+.article h2{font-size:clamp(22px,5vw,34px);line-height:1.6;margin:14px 0;color:var(--blue2)}
+.articlecontent{
+white-space:pre-wrap;overflow-wrap:anywhere;
+line-height:2.15;font-size:15px;color:#e1ecf8
+}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.article .btn{padding:10px 14px}
+@media(max-width:600px){
+.wrap{width:calc(100% - 22px)}
+.topin{padding:11px 0}
+.brand h1{font-size:16px}
+.brand small{font-size:9px;letter-spacing:1px}
+.sigil{width:39px;height:39px}
+.pill{font-size:11px;padding:7px 9px}
+.hero{padding-top:24px}
+.hero h2{font-size:29px}
+.featured{grid-template-columns:1fr}
+.featured img{height:185px;min-height:0}
+.feattext{padding:15px}
+.card{grid-template-columns:105px minmax(0,1fr)}
+.thumb{width:105px;min-height:125px;max-height:180px}
+.cardbody{padding:10px}
+.card h3{font-size:14px;margin:7px 0}
+.excerpt{-webkit-line-clamp:2;font-size:11px}
+.readmore{margin-top:6px}
+.archive{padding:10px}
+.dateinput,.date-select{flex-basis:42%}
+}
+@media(max-width:360px){
+.card{grid-template-columns:85px minmax(0,1fr)}
+.thumb{width:85px;min-height:125px}
+.card h3{font-size:13px}
+.meta{font-size:9px}
+}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap topin">
-<a class="brand" href="./"><span class="sigil">N</span><span><h1>NORTH NEWS</h1><small>ROYAL NEWS NETWORK</small></span></a>
-<a class="pill" href="#news">أخبار المملكة</a>
-</div></header>
+
+<header class="top">
+  <div class="wrap topin">
+    <a class="brand" href="./">
+      <span class="sigil">N</span>
+      <span>
+        <h1>NORTH NEWS</h1>
+        <small>N.R.H. OFFICIAL NEWSPAPER</small>
+      </span>
+    </a>
+    <a class="pill" href="#news">أخبار المملكة</a>
+  </div>
+</header>
+
 <main class="wrap">
-<section class="hero"><div class="eyebrow">NORTH · N.R.H</div><h2>صوت المملكة الرسمي</h2><p>آخر أخبار المملكة والنقابات والقرارات الملكية، في مكان واحد.</p><div class="goldline"></div>
-<div class="toolbar"><input class="search" id="search" placeholder="ابحث عن خبر أو نقابة..." aria-label="البحث في الأخبار"></div>
-<div class="filters" id="filters">
-<button class="filter active" data-cat="الكل">كل الأخبار</button><button class="filter" data-cat="قرارات ملكية">قرارات ملكية</button><button class="filter" data-cat="النقابات">النقابات</button><button class="filter" data-cat="تعيينات">تعيينات</button><button class="filter" data-cat="إعلانات">إعلانات</button><button class="filter" data-cat="أخرى">أخرى</button>
-</div></section>
-<section id="featured" class="featured" aria-label="الخبر الرئيسي"></section>
-<section id="news"><div class="sectionhead"><h3>آخر الأخبار</h3><span id="count">جارٍ تحميل الأخبار...</span></div><div class="grid" id="grid"><div class="notice">جارٍ الاتصال بأرشيف المملكة...</div></div><div class="status" id="status" role="status"></div></section>
+  <section class="hero">
+    <div class="eyebrow">NORTH · N.R.H</div>
+    <h2>صوت المملكة الرسمي</h2>
+    <p>آخر أخبار المملكة والنقابات والقرارات الملكية، في مكان واحد.</p>
+    <div class="blueline"></div>
+  </section>
+
+  <section class="ticker" aria-label="موجز الأخبار">
+    <div class="ticker-label">موجز المملكة</div>
+    <div class="ticker-window" id="ticker">
+      <span style="color:var(--muted);font-size:12px">جارٍ تحميل الأخبار...</span>
+    </div>
+  </section>
+
+  <section aria-label="البحث والتصنيفات">
+    <div class="toolbar">
+      <input class="search" id="search" placeholder="ابحث عن خبر أو نقابة..." aria-label="البحث في الأخبار">
+    </div>
+
+    <div class="archive">
+      <div class="archive-title">أرشيف الأخبار حسب التاريخ</div>
+      <input class="dateinput" id="dateFrom" type="date" aria-label="من تاريخ">
+      <input class="dateinput" id="dateTo" type="date" aria-label="إلى تاريخ">
+      <button class="btn primary" id="applyDates">تطبيق</button>
+      <button class="btn" id="clearDates">مسح التاريخ</button>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-cat="الكل">كل الأخبار</button>
+      <button class="filter" data-cat="قرارات ملكية">قرارات ملكية</button>
+      <button class="filter" data-cat="النقابات">النقابات</button>
+      <button class="filter" data-cat="تعيينات">تعيينات</button>
+      <button class="filter" data-cat="إعلانات">إعلانات</button>
+      <button class="filter" data-cat="أخرى">أخرى</button>
+    </div>
+  </section>
+
+  <section id="featured" class="featured" aria-label="الخبر الرئيسي"></section>
+
+  <section id="news">
+    <div class="sectionhead">
+      <h3>آخر الأخبار</h3>
+      <span id="count">جارٍ تحميل الأخبار...</span>
+    </div>
+    <div class="grid" id="grid">
+      <div class="notice">جارٍ الاتصال بأرشيف المملكة...</div>
+    </div>
+    <div class="status" id="status" role="status"></div>
+  </section>
 </main>
-<footer class="footer"><div class="wrap">NORTH NEWS · المنصة الإخبارية الرسمية لمملكة NORTH</div></footer>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="تفاصيل الخبر"><div class="article" id="article"></div></div>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./config.js"></script>
+
+<footer class="footer">
+  <div class="wrap">NORTH NEWS · المنصة الإخبارية الرسمية لمملكة الشمال</div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="تفاصيل الخبر">
+  <div class="article" id="article"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./config.js"></script>
 <script>
-const $=id=>document.getElementById(id);
-let db=null, allNews=[], activeCat="الكل";
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const dateFmt=s=>{try{return new Intl.DateTimeFormat("ar-EG",{dateStyle:"medium"}).format(new Date(s))}catch{return ""}};
-const imgFallback="data:image/svg+xml;charset=UTF-8,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#17140e"/><text x="50%" y="50%" fill="#d7b66b" font-size="48" text-anchor="middle" dominant-baseline="middle">NORTH NEWS</text></svg>');
-function img(url){return url||imgFallback}
-function excerpt(t,n=150){t=String(t||"").replace(/\s+/g," ").trim();return t.length>n?t.slice(0,n)+"…":t}
-function card(n){return `<article class="card" data-id="${esc(n.id)}" tabindex="0"><img class="thumb" src="${esc(img(n.image_url))}" alt="" onerror="this.src='${imgFallback}'"><div class="cardbody"><div class="meta"><span class="category">${esc(n.category)}</span><span>${dateFmt(n.published_at||n.created_at)}</span></div><h3>${esc(n.title)}</h3><p class="excerpt">${esc(excerpt(n.excerpt||n.content))}</p></div></article>`}
-function render(){
- const q=$("search").value.trim().toLocaleLowerCase("ar");
- const list=allNews.filter(n=>(activeCat==="الكل"||n.category===activeCat)&&[n.title,n.excerpt,n.content,n.category].join(" ").toLocaleLowerCase("ar").includes(q));
- $("count").textContent=`${list.length} خبر`;
- const feat=$("featured"); const featured=list.find(n=>n.is_featured);
- if(featured&&!q&&activeCat==="الكل"){feat.classList.add("show");feat.innerHTML=`<img src="${esc(img(featured.image_url))}" alt="" onerror="this.src='${imgFallback}'"><div class="feattext"><span class="tag">الخبر الرئيسي</span><h3>${esc(featured.title)}</h3><p>${esc(excerpt(featured.excerpt||featured.content,190))}</p><div class="meta"><span class="category">${esc(featured.category)}</span><span>${dateFmt(featured.published_at||featured.created_at)}</span></div></div>`;feat.onclick=()=>openArticle(featured)}else{feat.classList.remove("show");feat.innerHTML=""}
- const rest=list.filter(n=>!(featured&&n.id===featured.id&& !q&&activeCat==="الكل"));
- $("grid").innerHTML=rest.length?rest.map(card).join(""):'<div class="empty">لا توجد أخبار مطابقة حاليًا.</div>';
- $("grid").querySelectorAll("[data-id]").forEach(el=>{const go=()=>openArticle(allNews.find(n=>String(n.id)===el.dataset.id));el.onclick=go;el.onkeydown=e=>{if(e.key==="Enter")go()}});
+"use strict";
+
+const $ = id => document.getElementById(id);
+let db = null;
+let allNews = [];
+let activeCat = "الكل";
+let fromDate = "";
+let toDate = "";
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+}[c]));
+
+const dateFmt = s => {
+  if (!s) return "";
+  try {
+    return new Intl.DateTimeFormat("ar-EG", {dateStyle:"medium"}).format(new Date(s));
+  } catch {
+    return "";
+  }
+};
+
+const imgFallback = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450"><rect width="100%" height="100%" fill="#0c1c30"/><text x="50%" y="50%" fill="#38bdf8" font-size="48" text-anchor="middle" dominant-baseline="middle">NORTH NEWS</text></svg>'
+);
+
+function img(url) {
+  return url || imgFallback;
 }
-function openArticle(n){
- if(!n)return;
- $("article").innerHTML=`<button class="btn" id="close" style="margin:14px">✕ إغلاق</button><img src="${esc(img(n.image_url))}" alt="" onerror="this.src='${imgFallback}'"><div class="articleinner"><div class="meta"><span class="category">${esc(n.category)}</span><span>${dateFmt(n.published_at||n.created_at)}</span></div><h2>${esc(n.title)}</h2><div class="articlecontent">${esc(n.content)}</div><div class="actions"><button class="btn primary" id="share">مشاركة الخبر</button><button class="btn" id="copy">نسخ نص الخبر</button></div></div>`;
- $("modal").classList.add("open");document.body.style.overflow="hidden";
- $("close").onclick=closeArticle;
- $("share").onclick=()=>{const url=location.href.split("#")[0]+"#news-"+n.id;const text=`${n.title}\n${url}`;if(navigator.share)navigator.share({title:n.title,text,url}).catch(()=>{});else window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener")};
- $("copy").onclick=async()=>{try{await navigator.clipboard.writeText(n.title+"\n\n"+n.content);$("copy").textContent="تم النسخ"}catch{$("copy").textContent="تعذر النسخ"}};
- history.replaceState(null,"",location.pathname+location.search+"#news-"+n.id);
+
+function excerpt(t, n = 150) {
+  t = String(t || "").replace(/\s+/g, " ").trim();
+  return t.length > n ? t.slice(0, n) + "…" : t;
 }
-function closeArticle(){$("modal").classList.remove("open");document.body.style.overflow="";history.replaceState(null,"",location.pathname+location.search)}
-$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeArticle()});document.addEventListener("keydown",e=>{if(e.key==="Escape")closeArticle()});
-$("search").addEventListener("input",render);
-$("filters").querySelectorAll("button").forEach(b=>b.onclick=()=>{activeCat=b.dataset.cat;$("filters").querySelectorAll("button").forEach(x=>x.classList.toggle("active",x===b));render()});
-async function start(){
- if(!window.NORTH_SUPABASE_URL||!window.NORTH_SUPABASE_ANON_KEY||window.NORTH_SUPABASE_URL.includes("YOUR_")){$("grid").innerHTML='<div class="notice">الموقع يحتاج إعداد بيانات Supabase داخل config.js قبل عرض الأخبار.</div>';return}
- try{db=window.supabase.createClient(window.NORTH_SUPABASE_URL,window.NORTH_SUPABASE_ANON_KEY);
- const {data,error}=await db.from("north_news_articles").select("id,title,excerpt,content,category,image_url,is_featured,published_at,created_at").eq("status","published").order("is_featured",{ascending:false}).order("published_at",{ascending:false});
- if(error)throw error;allNews=data||[];render();$("status").textContent=allNews.length?"تم تحميل الأخبار المنشورة.":"لا توجد أخبار منشورة حتى الآن.";
- }catch(e){$("grid").innerHTML='<div class="notice">تعذر تحميل الأخبار. تأكد من إعداد Supabase والجداول وسياسات الوصول ثم حدّث الصفحة.</div>';console.error(e)}
+
+function newsDate(n) {
+  return n.published_at || n.created_at || "";
 }
+
+function inDateRange(n) {
+  const raw = newsDate(n);
+  if (!raw) return !fromDate && !toDate;
+
+  const day = new Date(raw).toISOString().slice(0, 10);
+  if (fromDate && day < fromDate) return false;
+  if (toDate && day > toDate) return false;
+  return true;
+}
+
+function card(n) {
+  return `
+    <article class="card" data-id="${esc(n.id)}" tabindex="0" role="button" aria-label="${esc(n.title)}">
+      <img class="thumb" src="${esc(img(n.image_url))}" alt=""
+        loading="lazy" onerror="this.onerror=null;this.src='${imgFallback}'">
+      <div class="cardbody">
+        <div class="meta">
+          <span class="category">${esc(n.category)}</span>
+          <span>${dateFmt(newsDate(n))}</span>
+        </div>
+        <h3>${esc(n.title)}</h3>
+        <p class="excerpt">${esc(excerpt(n.excerpt || n.content))}</p>
+        <span class="readmore">قراءة الخبر ←</span>
+      </div>
+    </article>`;
+}
+
+function renderTicker() {
+  const items = allNews.slice(0, 6);
+
+  if (!items.length) {
+    $("ticker").innerHTML =
+      '<span style="color:var(--muted);font-size:12px">لا توجد أخبار منشورة حاليًا.</span>';
+    return;
+  }
+
+  $("ticker").innerHTML = `
+    <div class="ticker-items">
+      ${items.map(n => `
+        <a href="#news-${encodeURIComponent(n.id)}" data-ticker-id="${esc(n.id)}">
+          ${esc(n.title)}
+        </a>
+      `).join("")}
+    </div>`;
+
+  $("ticker").querySelectorAll("[data-ticker-id]").forEach(el => {
+    el.onclick = e => {
+      e.preventDefault();
+      openArticle(allNews.find(n => String(n.id) === el.dataset.tickerId));
+    };
+  });
+}
+
+function render() {
+  const q = $("search").value.trim().toLocaleLowerCase("ar");
+
+  const list = allNews.filter(n => {
+    const categoryMatch = activeCat === "الكل" || n.category === activeCat;
+    const searchText = [n.title, n.excerpt, n.content, n.category]
+      .join(" ").toLocaleLowerCase("ar");
+    return categoryMatch && searchText.includes(q) && inDateRange(n);
+  });
+
+  $("count").textContent = `${list.length} خبر`;
+
+  const feat = $("featured");
+  const featured = list.find(n => n.is_featured);
+
+  if (featured && !q && activeCat === "الكل") {
+    feat.classList.add("show");
+    feat.innerHTML = `
+      <img src="${esc(img(featured.image_url))}" alt=""
+        onerror="this.onerror=null;this.src='${imgFallback}'">
+      <div class="feattext">
+        <span class="tag">الخبر الرئيسي</span>
+        <h3>${esc(featured.title)}</h3>
+        <p>${esc(excerpt(featured.excerpt || featured.content, 190))}</p>
+        <div class="meta">
+          <span class="category">${esc(featured.category)}</span>
+          <span>${dateFmt(newsDate(featured))}</span>
+        </div>
+        <span class="readmore">قراءة الخبر ←</span>
+      </div>`;
+    feat.onclick = () => openArticle(featured);
+    feat.onkeydown = e => {
+      if (e.key === "Enter") openArticle(featured);
+    };
+    feat.tabIndex = 0;
+  } else {
+    feat.classList.remove("show");
+    feat.innerHTML = "";
+  }
+
+  const rest = list.filter(n =>
+    !(featured && String(n.id) === String(featured.id) && !q && activeCat === "الكل")
+  );
+
+  $("grid").innerHTML = rest.length
+    ? rest.map(card).join("")
+    : '<div class="empty">لا توجد أخبار مطابقة للفلاتر الحالية.</div>';
+
+  $("grid").querySelectorAll("[data-id]").forEach(el => {
+    const go = () => openArticle(
+      allNews.find(n => String(n.id) === el.dataset.id)
+    );
+    el.onclick = go;
+    el.onkeydown = e => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        go();
+      }
+    };
+  });
+}
+
+function openArticle(n) {
+  if (!n) return;
+
+  $("article").innerHTML = `
+    <button class="btn" id="close" style="margin:14px">✕ إغلاق</button>
+    <img src="${esc(img(n.image_url))}" alt=""
+      onerror="this.onerror=null;this.src='${imgFallback}'">
+    <div class="articleinner">
+      <div class="meta">
+        <span class="category">${esc(n.category)}</span>
+        <span>${dateFmt(newsDate(n))}</span>
+      </div>
+      <h2>${esc(n.title)}</h2>
+      <div class="articlecontent">${esc(n.content || n.excerpt || "")}</div>
+      <div class="actions">
+        <button class="btn primary" id="share">مشاركة الخبر</button>
+        <button class="btn" id="copy">نسخ نص الخبر</button>
+      </div>
+    </div>`;
+
+  $("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+
+  $("close").onclick = closeArticle;
+
+  $("share").onclick = async () => {
+    const url = location.href.split("#")[0] + "#news-" + encodeURIComponent(n.id);
+    const text = `${n.title}\n${url}`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({title:n.title, text, url});
+      } catch (e) {}
+    } else {
+      window.open("https://wa.me/?text=" + encodeURIComponent(text), "_blank", "noopener");
+    }
+  };
+
+  $("copy").onclick = async () => {
+    const text = `${n.title}\n\n${n.content || n.excerpt || ""}`;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      $("copy").textContent = "تم النسخ ✓";
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+
+      try {
+        document.execCommand("copy");
+        $("copy").textContent = "تم النسخ ✓";
+      } catch {
+        $("copy").textContent = "تعذر النسخ";
+      }
+
+      ta.remove();
+    }
+  };
+
+  history.replaceState(null, "", location.pathname + location.search + "#news-" + encodeURIComponent(n.id));
+}
+
+function closeArticle() {
+  $("modal").classList.remove("open");
+  document.body.style.overflow = "";
+  history.replaceState(null, "", location.pathname + location.search);
+}
+
+$("modal").addEventListener("click", e => {
+  if (e.target === $("modal")) closeArticle();
+});
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeArticle();
+});
+
+$("search").addEventListener("input", render);
+
+$("filters").querySelectorAll("button").forEach(b => {
+  b.onclick = () => {
+    activeCat = b.dataset.cat;
+    $("filters").querySelectorAll("button").forEach(x => {
+      x.classList.toggle("active", x === b);
+    });
+    render();
+  };
+});
+
+$("applyDates").onclick = () => {
+  fromDate = $("dateFrom").value;
+  toDate = $("dateTo").value;
+
+  if (fromDate && toDate && fromDate > toDate) {
+    $("status").textContent = "تاريخ البداية يجب أن يكون قبل تاريخ النهاية.";
+    return;
+  }
+
+  $("status").textContent = "تم تطبيق فلتر الأرشيف.";
+  render();
+};
+
+$("clearDates").onclick = () => {
+  $("dateFrom").value = "";
+  $("dateTo").value = "";
+  fromDate = "";
+  toDate = "";
+  $("status").textContent = "تم عرض جميع التواريخ.";
+  render();
+};
+
+async function start() {
+  if (
+    !window.NORTH_SUPABASE_URL ||
+    !window.NORTH_SUPABASE_ANON_KEY ||
+    window.NORTH_SUPABASE_URL.includes("YOUR_")
+  ) {
+    $("grid").innerHTML =
+      '<div class="notice">الموقع يحتاج إعداد بيانات Supabase داخل config.js قبل عرض الأخبار.</div>';
+    $("count").textContent = "تعذر الاتصال";
+    $("status").textContent = "تحقق من ملف config.js.";
+    return;
+  }
+
+  try {
+    db = window.supabase.createClient(
+      window.NORTH_SUPABASE_URL,
+      window.NORTH_SUPABASE_ANON_KEY
+    );
+
+    // نفس الجدول والأعمدة وشرط النشر المستخدم في الصحيفة الأصلية.
+    const {data, error} = await db
+      .from("north_news_articles")
+      .select("id,title,excerpt,content,category,image_url,is_featured,published_at,created_at")
+      .eq("status", "published")
+      .order("is_featured", {ascending:false})
+      .order("published_at", {ascending:false});
+
+    if (error) throw error;
+
+    allNews = data || [];
+
+    // ترتيب احتياطي للأخبار التي لا تملك published_at.
+    allNews.sort((a, b) => {
+      if (Boolean(a.is_featured) !== Boolean(b.is_featured)) {
+        return Number(Boolean(b.is_featured)) - Number(Boolean(a.is_featured));
+      }
+
+      const da = new Date(newsDate(a) || 0).getTime();
+      const dbb = new Date(newsDate(b) || 0).getTime();
+      return dbb - da;
+    });
+
+    renderTicker();
+    render();
+
+    $("status").textContent = allNews.length
+      ? `تم تحميل ${allNews.length} خبر منشور من أرشيف المملكة.`
+      : "لا توجد أخبار منشورة حاليًا.";
+  } catch (e) {
+    console.error("NORTH NEWS loading error:", e);
+    $("grid").innerHTML =
+      '<div class="notice">تعذر تحميل الأخبار. لم يتم حذف أو تعديل أي بيانات. تحقق من اتصال Supabase وسياسات الوصول ثم أعد المحاولة.</div>';
+    $("count").textContent = "تعذر تحميل الأخبار";
+    $("status").textContent = "راجع سجل الأخطاء إذا استمرت المشكلة.";
+  }
+}
+
 start();
 </script>
-</body></html>
+</body>
+</html>
